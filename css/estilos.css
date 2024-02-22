@@ -1,14 +1,45 @@
+*{
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #3D3B40;
+    background-color: var(--body-color);
+    color: var(--black);
 }
 
 :root {
     --main-color: #525CEB;
+    --black: #3D3B40;
+    --body-color:#f4f4f4;
+    --nav-color: #BFCFE7;
+    --nav-a-color: white;
+    --gradient: lightgrey;
+    --footer-color: #F8EDFF;
+    --shadow:rgba(18, 11, 56, 0.2);
+    --section: #f4f4f4;
+    --flex-element: --flex-element;
+    --h2-tecno: #BFCFE7;
+
 }
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --main-color: #868cdb;
+        --black: #ccc9dc;
+        --body-color:#23222b;
+        --nav-color: #5F85DB;
+        --nav-a-color: #515acf;
+        --gradient: #5a5e68;
+        --footer-color: #1b2a41;
+        --shadow:rgba(5, 7, 7, 0.644);
+        --section: #353941;
+        --flex-element: #5F85DB;
+        --h2-tecno:#a8aceb;
+    }
+  }
 
 header, section, footer {
     margin: 20px auto;
@@ -21,7 +52,7 @@ header {
 }
 
 nav{
-    background-color: #BFCFE7;
+    background-color: var(--nav-color);
     
     text-align: center;
 }
@@ -39,7 +70,7 @@ nav ul li{
     font-weight: bold;
     cursor: default;
     margin:  30px;
-    background: #3D3B40;
+    background: var(--black);
     min-width: 110px;
 }
 
@@ -47,9 +78,9 @@ nav ul li a{
     display: block;
     text-decoration: none;
     cursor: default;
-    border: 3px solid #3D3B40;
-    background: white;
-    color: #3D3B40;
+    border: 3px solid var(--black);
+    background: var(--nav-a-color);
+    color: var(--black);
     transition: transform 0.3s ease;
     min-height: 100%;
     padding: 10px;
@@ -74,10 +105,10 @@ h2 {
 }
 
 section {
-    background-color: #fff;
+    background-color: var(--section);
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 1px 4px 5px var(--shadow);
     margin-bottom: 20px;
 }
 
@@ -85,7 +116,7 @@ footer {
     text-align: center;
     padding: 10px;
     background-color: var(--main-color);
-    color: #f4f4f4;
+    color: var(--body-color);
 }
 
 footer ul {
@@ -100,40 +131,39 @@ footer ul {
 footer ul li{
     padding-left: 5px;
     margin: 5px;
-    border-left: 1px solid #F8EDFF;
+    border-left: 1px solid var(--footer-color);
 }
 
 footer ul li a{
     text-decoration: none;
-    color: #F8EDFF;
+    color: var(--footer-color);
     margin-right: 10px;
 }
 
 footer a:hover{
-    color: white;
+    color: var(--nav-a-color);
     text-decoration: underline;
 }
 
 #idiomas {
-    background-color: #f4f4f4;
+    background-color: var(--section);
     padding: 20px;
 }
 
 .languages-container {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
     gap: 20px;
 }
 
 .language {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #fff;
+    
+    background-color: var(--flex-element);
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px var(--shadow);
     width: 180px;
     text-align: center;
 }
@@ -143,9 +173,46 @@ footer a:hover{
     margin-bottom: 10px;
 }
 
+div.language-left{
+    float: left;
+    width: 70%;
+}
+
+div.language-right{
+    float: right;
+    width: 10%;
+    margin: 0 0 0 10%;
+    min-height: 100%;
+    border: 2px solid var(--black);
+}
+
+div.language-right[data-lvl="5"]{
+    background: linear-gradient(to top, var(--main-color) 100%, var(--gradient) 100%);
+}
+
+div.language-right[data-lvl="4"]{
+    background: linear-gradient(to top, var(--main-color) 80%, var(--gradient) 90%);
+}
+
+div.language-right[data-lvl="3"]{
+    background: linear-gradient(to top, var(--main-color) 60%, var(--gradient) 70%);
+}
+
+div.language-right[data-lvl="2"]{
+    background: linear-gradient(to top, var(--main-color) 40%, var(--gradient) 50%);
+}
+
+.language-right[data-lvl="1"]{
+    background: linear-gradient(to top, var(--main-color) 20%, var(--gradient) 30%);
+}
+
+
+
+
+
 
 #informatica {
-    background-color: #f4f4f4;
+    background-color: var(--section);
     padding: 20px;
 }
 
@@ -160,10 +227,10 @@ footer a:hover{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #fff;
+    background-color: var(--flex-element);
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 3px 4px var(--shadow);
     width: 180px;
     text-align: center;
 }
@@ -174,7 +241,7 @@ footer a:hover{
 }
 
 #experiencia {
-    background-color: #f4f4f4;
+    background-color: varvar(--section);
     padding: 20px;
 }
 
@@ -189,10 +256,10 @@ footer a:hover{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #fff;
+    background-color: var(--flex-element);
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px var(--shadow);
     width: 250px; /* Ajusta según necesidad */
     text-align: center;
 }
@@ -203,7 +270,7 @@ footer a:hover{
 }
 
 #formacion-reglada {
-    background-color: #f4f4f4;
+    background-color: var(--section);
     padding: 20px;
 }
 
@@ -211,19 +278,21 @@ footer a:hover{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    gap: 20px;
+    flex-direction: column;
+    align-items: center;
 }
 
 .degree {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #fff;
+    background-color: var(--flex-element);
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    width: 250px; /* Ajuste según necesidad */
+    box-shadow: 0 2px 4px var(--shadow);
+    width: 100%; /* Ajuste según necesidad */
     text-align: center;
+    margin: 20px 0;
 }
 
 .degree span {
@@ -232,7 +301,7 @@ footer a:hover{
 }
 
 #formacion-complementaria {
-    background-color: #f4f4f4;
+    background-color: var(--section);
     padding: 20px;
 }
 
@@ -247,10 +316,10 @@ footer a:hover{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #fff;
+    background-color: var(--flex-element);
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px var(--shadow);
     width: 250px; /* Ajuste según necesidad */
     text-align: center;
 }
@@ -268,7 +337,7 @@ footer a:hover{
     text-align: left;
     margin: 40px 0 0 0;
     font-weight: 400;
-    border-bottom: 2px solid #BFCFE7;
+    border-bottom: 2px solid var(--h2-tecno);
 }
 
 #informatica h2:first-child {
@@ -282,7 +351,6 @@ footer a:hover{
     display: none;
 }
 
-/* Muestra el div con la clase "contenido" cuando se pasa el ratón sobre el h2 */
 h2:hover + .skills-web {
     display: flex;
     flex-wrap: wrap;
