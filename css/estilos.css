@@ -3,11 +3,11 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-    color: #333;
+    color: #3D3B40;
 }
 
 :root {
-    --main-color: blue;
+    --main-color: #525CEB;
 }
 
 header, section, footer {
@@ -20,6 +20,48 @@ header {
     text-align: center;
 }
 
+nav{
+    background-color: #BFCFE7;
+    
+    text-align: center;
+}
+
+nav ul{
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: default;
+    margin:  30px;
+    background: #3D3B40;
+    min-width: 110px;
+}
+
+nav ul li a{
+    display: block;
+    text-decoration: none;
+    cursor: default;
+    border: 3px solid #3D3B40;
+    background: white;
+    color: #3D3B40;
+    transition: transform 0.3s ease;
+    min-height: 100%;
+    padding: 10px;
+
+
+}
+
+nav ul li a:hover{
+    color: grey;
+    transform: translate(-8px ,-8px);
+}
+
 h1 {
     color: var(--main-color);
 }
@@ -27,6 +69,8 @@ h1 {
 h2 {
     border-bottom: 2px solid var(--main-color);
     padding-bottom: 5px;
+    text-align: center;
+    font-weight: 600;
 }
 
 section {
@@ -39,9 +83,35 @@ section {
 
 footer {
     text-align: center;
-    padding: 20px;
+    padding: 10px;
     background-color: var(--main-color);
-    color: #fff;
+    color: #f4f4f4;
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+}
+
+footer ul li{
+    padding-left: 5px;
+    margin: 5px;
+    border-left: 1px solid #F8EDFF;
+}
+
+footer ul li a{
+    text-decoration: none;
+    color: #F8EDFF;
+    margin-right: 10px;
+}
+
+footer a:hover{
+    color: white;
+    text-decoration: underline;
 }
 
 #idiomas {
@@ -189,3 +259,99 @@ footer {
     font-size: 50px;
     margin-bottom: 10px;
 }
+
+#informatica h2:first-child {
+    margin: 0;
+}
+
+#informatica h2{
+    text-align: left;
+    margin: 40px 0 0 0;
+    font-weight: 400;
+    border-bottom: 2px solid #BFCFE7;
+}
+
+#informatica h2:first-child {
+    margin: 0;
+    text-align: center;
+    font-weight: 600;
+    border-bottom: 3px solid var(--main-color);
+}
+
+.skills-web {
+    display: none;
+}
+
+/* Muestra el div con la clase "contenido" cuando se pasa el ratón sobre el h2 */
+h2:hover + .skills-web {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.skills-web:hover{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.skills-prog {
+    display: none;
+}
+
+h2:hover + .skills-prog {
+    display: flex;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.skills-prog:hover{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.skills-bd {
+    display: none;
+}
+
+h2:hover + .skills-bd {
+    display: flex;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.skills-bd:hover{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.skills-otros {
+    display: none;
+}
+
+h2:hover + .skills-otros {
+    display: flex;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.skills-otros:hover{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+
